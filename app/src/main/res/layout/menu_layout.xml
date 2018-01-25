@@ -1,37 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/background">
 
     <LinearLayout
+        android:elevation="4dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.2"></LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.85"
-        android:orientation="horizontal">
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"></LinearLayout>
         <Button
+            android:layout_gravity="center_vertical"
             android:id="@+id/backBtn_Menu"
-            android:layout_width="0dp"
+            android:layout_width="22dp"
             android:fontFamily="@font/omnigothic"
-            android:background="@drawable/buttonback"
-            android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:textColor="#555555"
+            android:background="@drawable/leftarrow"
+            android:layout_height="22dp"
             android:padding="0dp"
-            android:textSize="15sp"
-            android:text="back"
-            android:layout_weight="1.5"/>
+            android:layout_weight="0"/>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -51,20 +43,18 @@
             android:layout_weight="2.5"></LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.2"></LinearLayout>
-
     <View
+        android:id="@+id/view"
+        android:layout_below="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="#FFFFFF" />
 
     <TextView
+        android:id="@+id/text"
+        android:layout_below="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2.15"
+        android:layout_height="125dp"
         android:gravity="center_vertical"
         android:background="@drawable/textviewback"
         android:fontFamily="@font/omnigothic"
@@ -72,9 +62,10 @@
         android:text="마이페이지"/>
 
     <TextView
+        android:id="@+id/text2"
+        android:layout_below="@+id/text"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2.15"
+        android:layout_height="125dp"
         android:gravity="center_vertical"
         android:background="@drawable/textviewback"
         android:fontFamily="@font/omnigothic"
@@ -82,15 +73,17 @@
         android:text="나의 활동 기록"/>
 
     <View
+        android:id="@+id/view2"
+        android:layout_below="@+id/text2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.15"
+        android:layout_height="8dp"
         android:background="#FFFFFF"/>
 
     <TextView
+        android:id="@+id/text3"
+        android:layout_below="@+id/view2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2.15"
+        android:layout_height="125dp"
         android:gravity="center_vertical"
         android:background="@drawable/textviewback"
         android:fontFamily="@font/omnigothic"
@@ -98,13 +91,14 @@
         android:text="비밀번호 재설정"/>
 
     <TextView
+        android:id="@+id/text4"
+        android:layout_below="@+id/text3"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2.15"
+        android:layout_height="125dp"
         android:gravity="center_vertical"
         android:background="@drawable/textviewback"
         android:fontFamily="@font/omnigothic"
         android:textSize="40sp"
         android:text="알림 설정"/>
 
-</LinearLayout>
+</RelativeLayout>

@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/background">
-<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.2"></LinearLayout>
-
     <LinearLayout
+        android:elevation="4dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.85">
+        android:layout_height="56dp"
+        android:id="@+id/linearLayout">
         <TextView
             android:textColor="#FFFFFF"
             android:layout_width="match_parent"
@@ -24,39 +19,32 @@
             android:fontFamily="@font/omnigothic"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.2"></LinearLayout>
-
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:background="#FFFFFF" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"></LinearLayout>
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout"
+        android:background="#FFFFFF"
+        android:id="@+id/view" />
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2.5"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/view"
+        android:layout_marginTop="30dp"
         android:adjustViewBounds="false"
-        android:src="@drawable/logo"/>
+        android:src="@drawable/logo"
+        android:id="@+id/imageview" />
 
     <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/imageview"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"></LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.75"
+        android:layout_height="60dp"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:id="@+id/linearLayout1">
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -90,14 +78,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_below="@+id/linearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.25"></LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.75"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:gravity="center">
         <LinearLayout
@@ -133,9 +117,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_below="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.75"
+        android:layout_height="25dp"
         android:orientation="horizontal">
         <LinearLayout
             android:layout_width="0dp"
@@ -151,6 +136,7 @@
             android:text="자동로그인"
             android:textSize="18sp"/>
         <Switch
+            android:id="@+id/autoLogin_Login"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.5"/>
@@ -161,14 +147,11 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/linearLayout4"
+        android:layout_below="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.25"></LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.75"
+        android:layout_height="40dp"
         android:orientation="horizontal"
         android:gravity="center">
         <LinearLayout
@@ -208,14 +191,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/linearLayout4"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.25"></LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.75"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:gravity="center">
         <TextView
@@ -223,14 +202,10 @@
             android:padding="5dp"
             android:textSize="15sp"
             android:fontFamily="@font/omnigothic"
-            android:textColor="#555555"
+            android:textColor="#FFFFFF"
             android:text="비밀번호를 잊으셨나요?"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.75"></LinearLayout>
-</LinearLayout>
+</RelativeLayout>

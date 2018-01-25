@@ -1,43 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/background">
 
     <LinearLayout
+        android:elevation="4dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.2"></LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.85"
-        android:orientation="horizontal">
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"></LinearLayout>
         <Button
-            android:id="@+id/backBtn_AbleSignup"
-            android:layout_width="0dp"
-            android:fontFamily="@font/omnigothic"
-            android:background="@drawable/buttonback"
-            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_margin="0dp"
-            android:textColor="#555555"
+            android:id="@+id/backBtn_AbleSignup"
+            android:layout_width="22dp"
+            android:fontFamily="@font/omnigothic"
+            android:background="@drawable/leftarrow"
+            android:layout_height="22dp"
             android:padding="0dp"
-            android:textSize="15sp"
-            android:text="back"
-            android:layout_weight="1.5"/>
+            android:layout_weight="0"/>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"></LinearLayout>
         <TextView
-            android:layout_weight="5"
+            android:layout_weight="4.5"
             android:gravity="center"
             android:textColor="#FFFFFF"
             android:layout_width="0dp"
@@ -51,20 +44,17 @@
             android:layout_weight="2.5"></LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.2"></LinearLayout>
-
     <View
+        android:id="@+id/view"
+        android:layout_below="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="#FFFFFF" />
 
     <ScrollView
+        android:layout_below="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8.75">
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -518,4 +508,4 @@
         </LinearLayout>
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>

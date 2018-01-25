@@ -1,11 +1,14 @@
 package kr.co.kangnam.m2m;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +25,19 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
+
+        final SharedPreferences loginInformation = getSharedPreferences("setting", 0);
+
+        final EditText idEdit = (EditText)findViewById(R.id.idEdit_Login);
+        final EditText passEdit = (EditText)findViewById(R.id.passEdit_Login);
+
+        Switch sw = (Switch)findViewById(R.id.autoLogin_Login);
+
+        if(!loginInformation.getString("id", "").equals("")) {
+            idEdit.setText(loginInformation.getString("id", ""));
+            passEdit.setText(loginInformation.getString("pass", ""));
+            sw.setChecked(true);
+        }
 
         TextView findPass = (TextView) findViewById(R.id.findPassTV_Login);
         findPass.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +56,23 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), SignupSelectActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+            }
+        });
+
+        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    SharedPreferences.Editor editor = loginInformation.edit();
+                    editor.putString("id", idEdit.getText().toString());
+                    editor.putString("pass", passEdit.getText().toString());
+                    editor.commit();
+                }else{
+                    SharedPreferences.Editor editor = loginInformation.edit();
+                    editor.putString("id", "");
+                    editor.putString("pass", "");
+                    editor.commit();
+                }
             }
         });
 
