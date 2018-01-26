@@ -21,14 +21,25 @@ public class MainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainpage_layout);
 
-        Button backBtn = (Button) findViewById(R.id.menuBtn_Main);
-        backBtn.setOnClickListener(new View.OnClickListener() {
+        Button menuBtn = (Button) findViewById(R.id.menuBtn_Main);
+        menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
                 startActivity(intent);
                 //옆에서 튀어나오는 효과 주기 위해서 넣었었음!
                 overridePendingTransition(R.anim.anim_silde_in_left, R.anim.anim_slide_out_right);
+            }
+        });
+
+        Button helpbellBtn = (Button)findViewById(R.id.helpBell_Main);
+        helpbellBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                // 만약 장애학생일경우
+                Intent intent = new Intent(getApplicationContext(), helpBellRequestActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
             }
         });
     }

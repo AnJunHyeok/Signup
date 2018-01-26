@@ -24,6 +24,10 @@
         <activity android:name=".MainPageActivity"/>
         <activity android:name=".MenuActivity"/>
         <activity android:name=".DisableSignupFirstActivity"/>
+        <activity android:name=".helpBellRequestActivity"/>
+        <activity android:name=".helpBellAccessActivity"/>
+        <activity android:name=".helpBellRipleWaitActivity"/>
+        <activity android:name=".helpBellRipleCompleteActivity"/>
     </application>
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
