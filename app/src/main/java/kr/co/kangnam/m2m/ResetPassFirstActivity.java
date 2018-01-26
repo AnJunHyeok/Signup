@@ -70,6 +70,8 @@ public class ResetPassFirstActivity extends AppCompatActivity {
             }
         });
 
+
+        //사용자의 핸드폰 자동으로 입력해주는 기능(권한 동의를 했다면!)
         String phoneNum = null;
         TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(getApplicationContext().TELEPHONY_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {

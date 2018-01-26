@@ -33,11 +33,13 @@ public class LoginActivity extends AppCompatActivity {
 
         Switch sw = (Switch)findViewById(R.id.autoLogin_Login);
 
+        /* 자동 로그인 기능 체크 부분
         if(!loginInformation.getString("id", "").equals("")) {
             idEdit.setText(loginInformation.getString("id", ""));
             passEdit.setText(loginInformation.getString("pass", ""));
             sw.setChecked(true);
         }
+        */
 
         TextView findPass = (TextView) findViewById(R.id.findPassTV_Login);
         findPass.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //자동로그인 체크 시와 해제시의 기능 구분
         sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {

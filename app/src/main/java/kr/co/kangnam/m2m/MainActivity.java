@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //사용자에게 권한 받아오기..
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED){
             // 승낙 상태
         }else {
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.READ_CONTACTS},0);
 
+        // 3초후에 화면전환되기 위함..
         handler = new Handler(){
             public void handleMessage(Message msg){
                 if(HandlerStart) {
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
+                    // 화면 전환효과 없애기....
                     overridePendingTransition(0, 0);
                 }
             }
@@ -63,10 +66,12 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(requestCode == 0){
+            //만약 권한 설정에 대한 응답이 끝나면 그로부터 3초지나고 화면 전환이 일어나기 위한 플래그 변수
             HandlerStart = true;
         }
     }
 
+    // 뒤도가기를 눌러도 꺼지지 않도록 함..
     public void onBackPressed(){
       return;
     }

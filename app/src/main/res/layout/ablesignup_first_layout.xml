@@ -289,33 +289,15 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_margin="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="110dp">
-                <RadioGroup
+                android:layout_height="47dp">
+                <Spinner
                     android:id="@+id/helpKind_AbleSignup"
+                    android:fontFamily="@font/omnigothic"
+                    android:textSize="30sp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <RadioButton
-                        android:id="@+id/helpRB_AbleSignup"
-                        android:fontFamily="@font/omnigothic"
-                        android:textSize="30sp"
-                        android:text="도우미 학생"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"/>
-                    <RadioButton
-                        android:layout_marginTop="16dp"
-                        android:id="@+id/helpCarRB_AbleSignup"
-                        android:fontFamily="@font/omnigothic"
-                        android:textSize="30sp"
-                        android:text="차량 도우미"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"/>
-                </RadioGroup>
+                    android:layout_height="match_parent"/>
             </LinearLayout>
 
             <LinearLayout

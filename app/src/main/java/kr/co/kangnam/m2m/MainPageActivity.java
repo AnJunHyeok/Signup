@@ -27,6 +27,7 @@ public class MainPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
                 startActivity(intent);
+                //옆에서 튀어나오는 효과 주기 위해서 넣었었음!
                 overridePendingTransition(R.anim.anim_silde_in_left, R.anim.anim_slide_out_right);
             }
         });

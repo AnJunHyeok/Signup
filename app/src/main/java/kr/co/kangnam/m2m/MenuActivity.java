@@ -20,6 +20,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+                //왼쪽으로 들어가는 효과 넣으려고 추가 했었음!
                 overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
             }
         });
@@ -27,6 +28,7 @@ public class MenuActivity extends AppCompatActivity {
 
     public void onBackPressed(){
         finish();
+        //왼쪽으로 들어가는 효과 넣으려고 추가 했었음!
         overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
     }
 }

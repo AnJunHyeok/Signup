@@ -8,9 +8,12 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 /**
@@ -21,12 +24,19 @@ public class AbleSignupFirstActivity extends AppCompatActivity {
 
     boolean sendFlag = false, certiFlag = false;
     boolean manFlag = false, womanFlag = false;
-    boolean helpFlag = false, carFlag = false;
+    int helpKind = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ablesignup_first_layout);
+
+        final String[] strings = {"도우미 유형 선택", "도우미 학생", "차량 도우미"};
+
+
+        ArrayAdapter spinnerAdapter = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, strings);
+        Spinner spinner = (Spinner)findViewById(R.id.helpKind_AbleSignup);
+        spinner.setAdapter(spinnerAdapter);
 
         Button backBtn = (Button) findViewById(R.id.backBtn_AbleSignup);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -94,17 +104,15 @@ public class AbleSignupFirstActivity extends AppCompatActivity {
             }
         });
 
-        final RadioGroup helpRG = (RadioGroup)findViewById(R.id.helpKind_AbleSignup);
-        helpRG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if(i == R.id.helpRB_AbleSignup){
-                    helpFlag = true;
-                    carFlag = false;
-                }else if(i == R.id.helpCarRB_AbleSignup){
-                    carFlag = true;
-                    helpFlag = false;
-                }
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                helpKind = i;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
 
@@ -128,7 +136,7 @@ public class AbleSignupFirstActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
                 else if(!manFlag && !womanFlag)
                     Toast.makeText(getApplicationContext(), "성별을 선택해주세요.", Toast.LENGTH_SHORT).show();
-                else if(!helpFlag && !carFlag)
+                else if(helpKind == 0)
                     Toast.makeText(getApplicationContext(), "유형을 선택해주세요.", Toast.LENGTH_SHORT).show();
                 else {
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
