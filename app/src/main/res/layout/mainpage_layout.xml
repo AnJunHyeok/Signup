@@ -17,7 +17,7 @@
             android:layout_margin="16dp"
             android:layout_width="24dp"
             android:fontFamily="@font/omnigothic"
-            android:background="@drawable/leftarrow"
+            android:background="@drawable/menu"
             android:layout_height="24dp"
             android:layout_weight="0"/>
         <TextView

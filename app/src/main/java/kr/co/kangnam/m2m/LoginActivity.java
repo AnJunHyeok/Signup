@@ -32,14 +32,48 @@ public class LoginActivity extends AppCompatActivity {
         final EditText passEdit = (EditText)findViewById(R.id.passEdit_Login);
 
         Switch sw = (Switch)findViewById(R.id.autoLogin_Login);
-
-        /* 자동 로그인 기능 체크 부분
         if(!loginInformation.getString("id", "").equals("")) {
-            idEdit.setText(loginInformation.getString("id", ""));
-            passEdit.setText(loginInformation.getString("pass", ""));
+            /*
+            new AsyncTask<String, Void, String>() {
+                @Override
+                protected String doInBackground(String... strings) {
+                    System.out.println("url : " + strings[0]);
+                    URL Url = null;
+                    String line = null;
+                    try {
+                        Url = new URL(strings[0]);
+                        HttpURLConnection conn = (HttpURLConnection) Url.openConnection();
+                        conn.setRequestMethod("GET");
+                        InputStream is = conn.getInputStream();
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+                        line = reader.readLine();
+                        System.out.println(line);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    return line;
+                }
+
+                @Override
+                protected void onPostExecute(String s) {
+                    try {
+                        JSONObject jObj = new JSONObject(s);
+                        String message = jObj.getString("msg");
+                        System.out.println(message);
+                        if (message.equals("ok")) {
+                            Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                            overridePendingTransition(0, 0);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }.execute("http:/localhost:8080/myopenapi.jsp?method=login&userId=" + loginInformation.getString("id", "") + "&userPass=" + loginInformation.getString("pass", ""));
+            */
             sw.setChecked(true);
         }
-        */
 
         TextView findPass = (TextView) findViewById(R.id.findPassTV_Login);
         findPass.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +121,45 @@ public class LoginActivity extends AppCompatActivity {
                 EditText userPass = (EditText) findViewById(R.id.passEdit_Login);
 
                 if(!userId.getText().toString().equals("") && !userPass.getText().toString().equals("")) {
+                    /*
+                    new AsyncTask<String, Void, String>() {
+                        @Override
+                        protected String doInBackground(String... strings) {
+                            System.out.println("url : " + strings[0]);
+                            URL Url = null;
+                            String line = null;
+                            try {
+                                Url = new URL(strings[0]);
+                                HttpURLConnection conn = (HttpURLConnection) Url.openConnection();
+                                conn.setRequestMethod("GET");
+                                InputStream is = conn.getInputStream();
+                                BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+                                line = reader.readLine();
+                                System.out.println(line);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            return line;
+                        }
+
+                        @Override
+                        protected void onPostExecute(String s) {
+                            try {
+                                JSONObject jObj = new JSONObject(s);
+                                String message = jObj.getString("msg");
+                                System.out.println(message);
+                                if (message.equals("ok")) {
+                                    Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(intent);
+                                    overridePendingTransition(0, 0);
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }.execute("http:/localhost:8080/myopenapi.jsp?method=login&userId=" + userId.getText().toString() + "&userPass=" + userPass.getText().toString());
+                    */
                     Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);

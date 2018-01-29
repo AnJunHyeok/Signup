@@ -7,16 +7,16 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by aks56 on 2018-01-26.
+ * Created by aks56 on 2018-01-28.
  */
 
-public class helpBellRipleWaitActivity extends AppCompatActivity {
+public class helpBellRipleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.helpbell_riple_wait_layout);
+        setContentView(R.layout.helpbell_riple_layout);
 
-        Button backBtn = (Button) findViewById(R.id.backBtn_Helpbell_Riple_Wait);
+        Button backBtn = (Button) findViewById(R.id.backBtn_Helpbell_Riple);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,11 +24,11 @@ public class helpBellRipleWaitActivity extends AppCompatActivity {
             }
         });
 
-        Button writeBtn = (Button) findViewById(R.id.writeBtn_Helpbell_Riple_Wait);
+        Button writeBtn = (Button) findViewById(R.id.writeBtn_Helpbell_Riple);
         writeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), helpBellRipleActivity.class);
+                Intent intent = new Intent(getApplicationContext(), helpBellRipleCompleteActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();

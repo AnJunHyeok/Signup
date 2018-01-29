@@ -99,6 +99,7 @@
             <LinearLayout
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="47dp">
@@ -116,47 +117,6 @@
                     android:inputType="number"
                     android:layout_height="match_parent"
                     android:textSize="18sp"/>
-                <Button
-                    android:layout_marginLeft="16dp"
-                    android:id="@+id/sendBtn_AbleSignup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/buttonback"
-                    android:textColor="#555555"
-                    android:text="인증번호 발송"
-                    android:textSize="15sp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="47dp">
-                <ImageView
-                    android:src="@drawable/security"
-                    android:layout_width="47dp"
-                    android:layout_height="47dp"/>
-                <EditText
-                    android:layout_marginLeft="16dp"
-                    android:fontFamily="@font/omnigothic"
-                    android:textColor="#FFFFFF"
-                    android:id="@+id/numEdit_AbleSignup"
-                    android:layout_width="0dp"
-                    android:inputType="number"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textSize="18sp"/>
-                <Button
-                    android:layout_marginLeft="16dp"
-                    android:id="@+id/certiBtn_AbleSignup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/buttonback"
-                    android:textColor="#555555"
-                    android:text="인증받기"
-                    android:textSize="15sp"/>
             </LinearLayout>
 
             <LinearLayout

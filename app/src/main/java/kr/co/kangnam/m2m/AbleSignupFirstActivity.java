@@ -21,8 +21,6 @@ import android.widget.Toast;
  */
 
 public class AbleSignupFirstActivity extends AppCompatActivity {
-
-    boolean sendFlag = false, certiFlag = false;
     boolean manFlag = false, womanFlag = false;
     int helpKind = 0;
 
@@ -62,33 +60,7 @@ public class AbleSignupFirstActivity extends AppCompatActivity {
         }
 
         final EditText phoneNumEdit = (EditText)findViewById(R.id.phoneNumEdit_AbleSignup);
-        final EditText numEdit = (EditText)findViewById(R.id.numEdit_AbleSignup);
-
         phoneNumEdit.setText(phoneNum);
-
-        final Button sendBtn = (Button)findViewById(R.id.sendBtn_AbleSignup);
-        sendBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(phoneNumEdit.getText().toString().equals(""))
-                    Toast.makeText(getApplicationContext(), "핸드폰 번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
-                else
-                    sendFlag = true;
-            }
-        });
-
-        Button certiBtn = (Button)findViewById(R.id.certiBtn_AbleSignup);
-        certiBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!sendFlag)
-                    Toast.makeText(getApplicationContext(), "인증번호 발송 버튼을 눌러주세요.", Toast.LENGTH_SHORT).show();
-                else if(numEdit.getText().toString().equals(""))
-                    Toast.makeText(getApplicationContext(), "인증번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
-                else
-                    certiFlag = true;
-            }
-        });
 
         RadioGroup genderRG = (RadioGroup)findViewById(R.id.genderRG_AbleSignup);
         genderRG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -126,7 +98,7 @@ public class AbleSignupFirstActivity extends AppCompatActivity {
 
                 if(userName.getText().toString().equals("")){
                     Toast.makeText(getApplicationContext(), "이름을 입력해주세요.", Toast.LENGTH_SHORT).show();
-                }else if(!certiFlag){
+                }else if(phoneNumEdit.getText().toString().equals("")){
                     Toast.makeText(getApplicationContext(), "휴대폰 인증을 진행해주세요.", Toast.LENGTH_SHORT).show();
                 }else if(userPass.getText().toString().equals("") || userRepass.getText().toString().equals(""))
                     Toast.makeText(getApplicationContext(), "비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
