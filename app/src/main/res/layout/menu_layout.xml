@@ -87,5 +87,4 @@
         android:fontFamily="@font/omnigothic"
         android:textSize="40sp"
         android:text="알림 설정"/>
-
 </RelativeLayout>

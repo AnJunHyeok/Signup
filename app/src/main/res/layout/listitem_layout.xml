@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:padding="16dp"
+    android:layout_height="72dp"
+    android:background="#FFFFFF">
+    <Button
+        android:background="@drawable/buttonback5"
+        android:layout_width="0dp"
+        android:textSize="25sp"
+        android:fontFamily="@font/omnigothic"
+        android:text="신청중"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/text_list"
+        android:layout_marginLeft="16dp"
+        android:gravity="center"
+        android:fontFamily="@font/omnigothic"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:text=""
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+</LinearLayout>

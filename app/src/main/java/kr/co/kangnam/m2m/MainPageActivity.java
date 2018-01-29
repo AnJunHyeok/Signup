@@ -32,6 +32,16 @@ public class MainPageActivity extends AppCompatActivity {
             }
         });
 
+        Button helpbellHelperBtn = (Button)findViewById(R.id.helpBell_Main_Help);
+        helpbellHelperBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), helpBellListActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
         Button helpbellBtn = (Button)findViewById(R.id.helpBell_Main);
         helpbellBtn.setOnClickListener(new View.OnClickListener(){
             @Override

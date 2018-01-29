@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
+        <Button
+            android:layout_gravity="center_vertical"
+            android:layout_margin="16dp"
+            android:id="@+id/backBtn_Helpbell_List"
+            android:layout_width="24dp"
+            android:fontFamily="@font/omnigothic"
+            android:background="@drawable/leftarrow"
+            android:layout_height="24dp"/>
+        <TextView
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:layout_width="248dp"
+            android:layout_height="match_parent"
+            android:text="도움벨 서비스"
+            android:textSize="24sp"
+            android:fontFamily="@font/omnigothic"/>
+    </LinearLayout>
+
+    <View
+        android:layout_below="@+id/linearLayout"
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_below="@id/linearLayout"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/omnigothic"
+        android:layout_marginRight="16dp"
+        android:textSize="15sp"
+        android:text="업데이트 날짜 : 2018.01.30 12:12:30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/text"
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#FFFFFF" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_below="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/omnigothic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="현재 신청중인 목록"
+            android:textColor="#FFFFFF"/>
+
+        <ListView
+            android:id="@+id/list_Helpbell_Helper"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/omnigothic"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </ListView>
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/omnigothic"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="완료된 목록"
+            android:textColor="#FFFFFF"/>
+
+        <ListView
+            android:id="@+id/list2_Helpbell_Helper"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/omnigothic"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </ListView>
+    </LinearLayout>
+</RelativeLayout>

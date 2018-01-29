@@ -29,6 +29,9 @@
         <activity android:name=".helpBellRipleWaitActivity"/>
         <activity android:name=".helpBellRipleCompleteActivity"/>
         <activity android:name=".helpBellRipleActivity"/>
+        <activity android:name=".helpBellListActivity"/>
+        <activity android:name=".helpBellHelperRequestActivity"/>
+        <activity android:name=".helpBellSendActivity"/>
     </application>
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />

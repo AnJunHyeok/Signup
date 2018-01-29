@@ -13,7 +13,7 @@
         <Button
             android:layout_gravity="center_vertical"
             android:layout_margin="16dp"
-            android:id="@+id/backBtn_Helpbell_request"
+            android:id="@+id/backBtn_Helpbell_Helper_request"
             android:layout_width="24dp"
             android:fontFamily="@font/omnigothic"
             android:background="@drawable/leftarrow"
@@ -98,20 +98,14 @@
         android:layout_height="40dp">
         <TextView
             android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:text="세부 위치 : "
             android:background="@null"
             android:fontFamily="@font/omnigothic"
             android:textSize="20sp"
             android:textColor="#000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <EditText
-            android:background="@null"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/omnigothic"
-            android:textSize="20sp"
-            android:textColor="#000000" />
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <LinearLayout
@@ -126,36 +120,15 @@
         android:layout_height="40dp">
         <TextView
             android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:text="희망 도우미 성별 : "
             android:background="@null"
             android:fontFamily="@font/omnigothic"
             android:textSize="20sp"
             android:textColor="#000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <EditText
-            android:hint="(선택 사항)"
-            android:textColorHint="#555555"
-            android:background="@null"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/omnigothic"
-            android:textSize="20sp"
-            android:textColor="#000000" />
+            android:layout_height="wrap_content"/>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/text"
-        android:layout_below="@+id/linearLayout4"
-        android:layout_marginRight="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:fontFamily="@font/omnigothic"
-        android:textSize="15sp"
-        android:textColor="#FF0000"
-        android:text="* 빈칸 일 시 도우미의 성별 제한은 없습니다."/>
 
     <LinearLayout
         android:layout_marginLeft="32dp"
@@ -163,40 +136,50 @@
         android:layout_marginTop="8dp"
         android:id="@+id/linearLayout5"
         android:gravity="center_vertical"
-        android:layout_below="@+id/text"
+        android:layout_below="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:background="@drawable/buttonback"
         android:layout_height="40dp">
         <TextView
             android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:text="메모 : "
             android:background="@null"
             android:fontFamily="@font/omnigothic"
             android:textSize="20sp"
             android:textColor="#000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <EditText
-            android:background="@null"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/omnigothic"
-            android:textSize="20sp"
-            android:textColor="#000000" />
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/sendBtn_Helpbell_request"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
-        android:text="도움요청"
-        android:fontFamily="@font/omnigothic"
-        android:textSize="20sp"
-        android:textColor="#000000"
-        android:background="@drawable/buttonback3"
-        android:layout_width="100dp"
-        android:layout_height="50dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_height="50dp">
+        <Button
+            android:id="@+id/okBtn_Helpbell_Helper_request"
+            android:text="수락"
+            android:fontFamily="@font/omnigothic"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:background="@drawable/buttonback3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_marginLeft="16dp"
+            android:id="@+id/cancelBtn_Helpbell_Helper_request"
+            android:text="닫기"
+            android:fontFamily="@font/omnigothic"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:background="@drawable/buttonback4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
 </RelativeLayout>
